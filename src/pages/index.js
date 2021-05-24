@@ -3,10 +3,10 @@ import { Helmet } from 'react-helmet';
 import L from 'leaflet';
 
 import { useTracker } from 'hooks';
-import { commafy, friendlyDate } from 'lib/util';
+// import { commafy, friendlyDate } from 'lib/util';
 
+// import Container from 'components/Container';
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 import Map from 'components/Map';
 
 const LOCATION = {
@@ -26,57 +26,6 @@ const IndexPage = () => {
   });
 
   const hasCountries = Array.isArray( countries ) && countries.length > 0;
-
-  const dashboardStats = [
-    {
-      primary: {
-        label: 'Total Cases',
-        value: stats ? commafy( stats?.cases ) : '-',
-      },
-      secondary: {
-        label: 'Per 1 Million',
-        value: stats ? commafy( stats?.casesPerOneMillion ) : '-',
-      },
-    },
-    {
-      primary: {
-        label: 'Total Deaths',
-        value: stats ? commafy( stats?.deaths ) : '-',
-      },
-      secondary: {
-        label: 'Per 1 Million',
-        value: stats ? commafy( stats?.deathsPerOneMillion ) : '-',
-      },
-    },
-    {
-      primary: {
-        label: 'Total Tests',
-        value: stats ? commafy( stats?.tests ) : '-',
-      },
-      secondary: {
-        label: 'Per 1 Million',
-        value: stats ? commafy( stats?.testsPerOneMillion ) : '-',
-      },
-    },
-    {
-      primary: {
-        label: 'Active Cases',
-        value: stats ? commafy( stats?.active ) : '-',
-      },
-    },
-    {
-      primary: {
-        label: 'Critical Cases',
-        value: stats ? commafy( stats?.critical ) : '-',
-      },
-    },
-    {
-      primary: {
-        label: 'Recovered Cases',
-        value: stats ? commafy( stats?.recovered ) : '-',
-      },
-    },
-  ];
 
   /**
    * mapEffect
@@ -167,7 +116,7 @@ const IndexPage = () => {
   return (
     <Layout pageName="home">
       <Helmet>
-        <title>Map of Spread</title>
+        <title>Covid Map Central</title>
       </Helmet>
 
       <div className="tracker">
